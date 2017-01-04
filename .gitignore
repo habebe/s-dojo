@@ -1,0 +1,9 @@
+derby.log
+.project
+.settings
+.classpath
+*.class
+*.jar
+*~
+target
+.DS_Store
