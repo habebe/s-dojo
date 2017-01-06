@@ -1,0 +1,75 @@
+<div layout="column" layout-align="center center" layout-fill="layout-fill">
+    <div class="loginBox md-whiteframe-z1" layout="column">
+        <md-toolbar>
+            <h2 class="md-toolbar-tools"><span>Create Account</span></h2>
+        </md-toolbar>
+        <md-content class="md-padding">
+            <form name="createAccountForm" layout="column">
+                <div layout="row">
+                    <md-input-container>
+                        <label>First name</label>
+                        <input required name="firstName" ng-model="$ctrl.account.firstName" ng-disabled="$ctrl.requestInProgress"/>
+                        <div ng-messages="createAccountForm.firstName.$error" role="alert">
+                            <div ng-message="required">Please provide your first name.</div>
+                        </div>
+                    </md-input-container>
+                    <md-input-container>
+                        <label>Last name</label>
+                        <input name="lastName" ng-model="$ctrl.account.lastName" required ng-disabled="$ctrl.requestInProgress"/>
+                        <div ng-messages="createAccountForm.lastName.$error" role="alert">
+                            <div ng-message="required">Please provide your last name.</div>
+                        </div>
+                    </md-input-container>
+                </div>
+                <md-input-container>
+                    <label>Email</label>
+                    <input type="email" name="email" ng-model="$ctrl.account.email" required ng-disabled="$ctrl.requestInProgress"/>
+                    <div ng-messages="createAccountForm.email.$error" role="alert">
+                        <ng-message when="required" translate>Please provide your email address.</ng-message>
+                        <ng-message when="email" translate>This field must be a valid email address.</ng-message>
+                    </div>
+                </md-input-container>
+                <md-input-container>
+                    <label>Password </label>
+                    <input type="password" name="password" ng-model="$ctrl.account.password" required minlength="6" ng-disabled="$ctrl.requestInProgress"/>
+                     <div ng-messages="createAccountForm.password.$error" role="alert">
+                        <ng-message when="required" translate>Please enter a password.</ng-message>
+                        <ng-message when="minlength" translate>Password must be at least 6 characters.</ng-message>
+                        
+                    </div>
+                </md-input-container>
+                <md-input-container style="padding:0px">
+                    <label>Confirm Password </label>
+                    <input type="password" name="confirmPassword" 
+                    ng-model="$ctrl.confirmPassword" required 
+                    ng-pattern="{{$ctrl.account.password}}"
+                    ng-disabled="$ctrl.requestInProgress"
+                    />
+                    <div ng-messages="createAccountForm.confirmPassword.$error">
+                        <ng-message when="required" translate>Please provide a password.</ng-message>
+                        <ng-message when="pattern" translate>Password does not match.</ng-message>
+                    </div>
+                </md-input-container>
+                <div layout="row">
+                    <md-input-container>
+                        <label>USPSA number</label>
+                        <input type="uspsaNumber" ng-model="$ctrl.account.uspsaNumber" ng-disabled="$ctrl.requestInProgress"/>
+                    </md-input-container>
+                    <md-input-container>
+                        <label>IDPA number</label>
+                        <input type="idpaNumber" ng-model="$ctrl.account.idpaNumber" ng-disabled="$ctrl.requestInProgress"/>
+                    </md-input-container>
+                </div>
+                 
+                <div layout-align="center center" layout="row" style="padding-left:10px;padding-right:10px">
+                    <md-button class="md-raised md-primary md-button-no-text-transform" 
+                    ng-disabled="$ctrl.createAccountButtonDisabled()"
+                    ng-click="$ctrl.createAccountClicked($event)">
+                        Create Account
+                    </md-button>
+                    <md-progress-circular ng-disabled="$ctrl.requestInProgress == false" ng-hide="$ctrl.requestInProgress == false" class="md-hue-2" md-diameter="20px"></md-progress-circular>
+                </div>
+            </form>
+        </md-content>
+    </div>
+</div>

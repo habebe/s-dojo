@@ -3,7 +3,6 @@ package com.abebe.sdojo.core.models.entities.account;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -25,9 +24,6 @@ public class User
 	@JsonProperty("uspsaNumber")
 	private String uspsaNumber;
 
-	@JsonProperty("account")
-	@ManyToOne
-	private Account account;
 	
 	public int getId() {
 		return id;
@@ -59,13 +55,5 @@ public class User
 
 	public void setUspsaNumber(String uspsaNumber) {
 		this.uspsaNumber = uspsaNumber;
-	}
-
-	public Account getAccount() {
-		return account;
-	}
-
-	public void setAccount(Account account) {
-		this.account = account;
 	}
 }

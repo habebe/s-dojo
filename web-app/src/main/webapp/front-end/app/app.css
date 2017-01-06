@@ -1,0 +1,58 @@
+.md-button-no-text-transform {
+  text-transform: none;
+}
+
+.nav-md-button {
+  padding: 0 6px 0 6px;
+  margin: 6px 8px 6px 8px;
+  min-width: 88px;
+  border-radius: 3px;
+  font-size: 18px;
+  text-align: center;
+  text-transform: none;
+  text-decoration: none;
+  border: none;
+  outline: none;
+}
+
+
+.sign-in-md-button {
+  font-size: 14px;
+  text-transform: none;
+}
+
+.homeTitle {
+  font-size:200%;
+   text-transform: lower;
+}
+
+
+.icondemoLoadSvgIconsFromUrl md-progress-circular {
+  margin-bottom: 20px; }
+
+.icondemoLoadSvgIconsFromUrl md-icon {
+  margin: 20px;
+  margin-top: 0;
+  width: 24px;
+  height: 24px; }
+
+.icondemoLoadSvgIconsFromUrl .demo-content {
+  min-height: 210px; }
+
+.icondemoLoadSvgIconsFromUrl .appDemoSvgIcons {
+  padding: 25px; }
+
+.icondemoLoadSvgIconsFromUrl .s24 {
+  width: 24px;
+  height: 24px;
+  color: #f00; }
+
+.icondemoLoadSvgIconsFromUrl .s36 {
+  width: 36px;
+  height: 36px;
+  color: #0f0; }
+
+.icondemoLoadSvgIconsFromUrl .s48 {
+  width: 48px;
+  height: 48px;
+  color: #00f; }

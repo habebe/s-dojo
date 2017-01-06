@@ -1,0 +1,32 @@
+<div layout="column" layout-fill>
+    <!--md-toolbar>
+        <div class="md-toolbar-tools">
+            <h1 class="homeTitle">
+                <span>{{this.title}}</span>
+            </h1>
+            <span flex></span>
+            <md-button class="nav-md-button" aria-label="Home" ng-click="this.homeClicked($event)" ng-disabled="this.homeIsDisabled()">
+                Home
+            </md-button>
+            <md-button class="nav-md-button" aria-label="Dashboard" ng-click="this.dashboardClicked($event)" ng-disabled="this.learnMoreIsDisabled()">
+               Dashboard
+            </md-button>
+            <span flex></span>
+            <md-button class="sign-in-md-button" ng-click="this.signInClicked($event)" ng-disabled="this.contentIsHidden()">{{signedInLabel}}</md-button>
+        </div>
+    </md-toolbar-->
+    <!--md-content class='md-padding' layout="row" flex ng-hide="this.contentIsHidden()">
+        <div ng-show="this.homeIsDisabled()">
+            <p>Home</p>
+        </div>
+        <div ng-show="this.learnMoreIsDisabled()">
+            <p>Learn more</p>
+        </div>
+    </md-content-->
+    <md-content>
+        <sign-in></sign-in>
+        <create-account></create-account>
+        <forgot-password></forgot-password>
+    </md-content>
+   
+</div>

@@ -7,3 +7,6 @@ derby.log
 *~
 target
 .DS_Store
+node_modules
+bower_components
+bin

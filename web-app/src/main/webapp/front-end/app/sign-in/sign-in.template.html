@@ -1,0 +1,37 @@
+<div layout="column" layout-align="center center" layout-fill="layout-fill">
+    <div class="loginBox md-whiteframe-z1" layout="column">
+        <md-toolbar>
+            <h2 class="md-toolbar-tools"><span>Sign in</span></h2>
+        </md-toolbar>
+        <md-content class="md-padding" layout="column">
+            <md-input-container>
+                <label>Email</label>
+                <input type="email" ng-model="$ctrl.data.username" />
+            </md-input-container>
+            <md-input-container style="padding:0px">
+                <label>Password </label>
+                <input type="password" ng-model="$ctrl.data.password" />
+            </md-input-container>
+            <div layout-align="center center" layout="column" style="padding-left:10px;padding-right:10px">
+             <div layout="row" layout-align="center center">
+                <md-button href="" md-no-ink="md-no-ink" class="md-button-no-text-transform" 
+                ng-click="$ctrl.forgotPasswordClicked($event)">
+                    Forgot Password
+                </md-button>
+                <md-button href="" md-no-ink="md-no-ink" class="md-button-no-text-transform" 
+                ng-click="$ctrl.createAccountClicked($event)">
+                    Create Account
+                </md-button>
+            </div>
+                <md-button class="md-raised md-primary md-button-no-text-transform" 
+                    ng-disabled="$ctrl.signInDisabled()" 
+                    ng-click="$ctrl.signInClicked($event)">
+                    Sign in
+                </md-button>
+                <md-progress-circular ng-disabled="$ctrl.requestInProgress == false" 
+                ng-hide="$ctrl.requestInProgress == false" class="md-hue-2" md-diameter="20px">
+                </md-progress-circular>
+            </div>
+        </md-content>
+    </div>
+</div>

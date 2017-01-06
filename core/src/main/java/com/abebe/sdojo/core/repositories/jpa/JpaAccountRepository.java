@@ -33,7 +33,7 @@ public class JpaAccountRepository implements AccountRepository
 
 	@Override
 	public Account findUsingUserName(String userName) {
-		TypedQuery<Account>  query = entityManager.createQuery("from Account WHERE name=?1",Account.class);
+		TypedQuery<Account>  query = entityManager.createQuery("from Account WHERE userName=?1",Account.class);
 		query.setParameter(1, userName);
 		List<Account> accounts = query.getResultList();
 		if(accounts.size() == 0) {
@@ -43,6 +43,19 @@ public class JpaAccountRepository implements AccountRepository
 		}
 	}
 
+	@Override
+	public Account findUsingEmail(String email)
+	{
+		TypedQuery<Account>  query = entityManager.createQuery("from Account WHERE email=?1",Account.class);
+		query.setParameter(1, email);
+		List<Account> accounts = query.getResultList();
+		if(accounts.size() == 0) {
+			return null;
+		} else {
+			return accounts.get(0);
+		}
+	}
+	
 	@Override
 	public Account create(Account account) 
 	{
